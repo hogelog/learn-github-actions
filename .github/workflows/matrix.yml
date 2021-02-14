@@ -1,0 +1,21 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  echo:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        binary: [dgs-codegen, dgs-codegen.exe]
+        os-name: [linux, macos, windows]
+        exclude:
+          - os: ubuntu-latest
+            binary: dgs-codegen.exe
+            os-name: [macos, windows]
+          - os: macos-latest
+            binary: dgs-codegen.exe
+            os-name: [linux, windows]
+          - os: windows-latest
+            binary: dgs-codegen
+            os-name: [linux, macos]
+    steps:
+      - run: echo ${{ matrix.os }}-${{ matrix.binary }}-${{ matrix.os-name }}
