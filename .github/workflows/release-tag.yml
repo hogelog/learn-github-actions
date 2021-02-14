@@ -9,6 +9,7 @@ jobs:
     steps:
       - run: 'echo hoge > hoge.txt'
       - uses: actions/create-release@v1
+        id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -17,6 +18,7 @@ jobs:
           draft: false
           prerelease: false
       - uses: actions/upload-release-asset@v1
+        id: upload_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
