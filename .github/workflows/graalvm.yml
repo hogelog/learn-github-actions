@@ -8,4 +8,6 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - uses: DeLaGuardo/setup-graalvm@3.1
+        with:
+          graalvm-version: '21.0.0.java11'
       - run: java -version
