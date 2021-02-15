@@ -17,4 +17,4 @@ jobs:
             binary: dgs-codegen.exe
             os-name: windows
     steps:
-      - run: echo ${{ matrix.os }}-${{ matrix.binary }}-${{ matrix.os-name }}
+      - run: echo ${{ matrix.os }}-${{ matrix.binary }}-${{ matrix.os-name }}-${{ github.ref }}
