@@ -19,4 +19,4 @@ jobs:
     steps:
       - run: echo ${{ matrix.os }}-${{ matrix.binary }}-${{ matrix.os-name }}-${{ github.ref }}
         id: echo
-      - run: echo ${{ steps.echo.output }}
+      - run: echo ${{ steps.echo.outputs }}
