@@ -25,6 +25,7 @@ jobs:
           name: binary-${{ matrix.os-name }}
           path: ./foo/bar/*
   download:
+    needs: echo
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
