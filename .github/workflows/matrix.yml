@@ -18,3 +18,5 @@ jobs:
             os-name: windows
     steps:
       - run: echo ${{ matrix.os }}-${{ matrix.binary }}-${{ matrix.os-name }}-${{ github.ref }}
+        id: echo
+      - run: echo ${{ steps.echo.output }}
