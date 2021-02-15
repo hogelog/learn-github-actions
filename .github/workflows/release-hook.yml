@@ -2,7 +2,7 @@ name: release-hook
 on:
   release:
     types: published
-job:
+jobs:
   echo:
     steps:
       run: echo ${{ github.ref }}
