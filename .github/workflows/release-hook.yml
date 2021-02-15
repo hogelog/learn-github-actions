@@ -1,0 +1,9 @@
+name: release-hook
+on:
+  release:
+    types: published
+job:
+  echo:
+    run: echo ${{ github.ref }}
+    run: echo ${{ github.event.release.url }}
+    :run: echo ${{ github.event.release.upload_url }}
