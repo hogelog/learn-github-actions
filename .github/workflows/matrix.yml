@@ -41,6 +41,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: binary-${{ matrix.os-name }}
+          path: ./foo/bar/
       - run: ls
       - run: ls foo
       - run: ls foo/bar
